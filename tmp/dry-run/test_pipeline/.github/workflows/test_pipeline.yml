@@ -6,7 +6,7 @@ on:
   - cron: 0-29/10 * * * *
 env:
   DISABLE_AUTH: 'true'
-  DB_ENGINE: sqlite
+  DB_ENGINE: mongodb
 jobs:
   build:
     runs-on:

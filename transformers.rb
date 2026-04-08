@@ -1,3 +1,5 @@
+env "DB_ENGINE", "mongodb"
+
 transform "sleep" do |item|
   wait_time = item["arguments"][0]["value"]["value"]
 
