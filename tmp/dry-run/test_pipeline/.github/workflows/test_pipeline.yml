@@ -10,8 +10,7 @@ env:
 jobs:
   build:
     runs-on:
-      - self-hosted
-      - TeamARunner
+      - ubuntu-latest
     steps:
     - name: checkout
       uses: actions/checkout@v4.1.0
@@ -24,8 +23,7 @@ jobs:
       run: echo "DISABLE_AUTH is ${{ env.DISABLE_AUTH }}"
   test:
     runs-on:
-      - self-hosted
-      - TeamARunner
+      - ubuntu-latest
     needs: build
     steps:
     - name: checkout
