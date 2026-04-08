@@ -1,0 +1,32 @@
+name: test_freestyle_project
+on:
+  schedule:
+  - cron: "*/1 * * * *"
+env:
+  first-var: "${{ secrets.EXPRESSION_FIRST_VAR }}"
+jobs:
+  build:
+    runs-on:
+      - self-hosted
+      - DemoRunner
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: run command
+      shell: bash
+      run: |-
+        echo "hello GitHub Actions Importer!"
+        sleep 70
+    - name: run command
+      shell: bash
+      run: echo "I hope you are enjoying this lab"
+    - name: pushing git resources
+      shell: bash
+      run: |-
+        git fetch --tags
+        git rev-parse this-important-tag
+        git tag -a -f -m "Jenkins Git plugin tagging with this-important-tag" this-important-tag
+        git push origin this-important-tag
+        git push origin
+      if: always()
+#     # Mailer plugin was not converted because GitHub Actions will email the actor after failed build and does not support emailing a list of recipients

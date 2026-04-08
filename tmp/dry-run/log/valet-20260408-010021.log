@@ -1,0 +1,21 @@
+# Logfile created on 2026-04-08 01:00:21 +0000 by logger.rb/v1.6.0
+I, [2026-04-08T01:00:21.761997 #1]  INFO -- : Using GitHub Features: Defaults
+I, [2026-04-08T01:00:21.762926 #1]  INFO -- request: GET http://localhost:8080/job/test_pipeline/config.xml
+I, [2026-04-08T01:00:21.782585 #1]  INFO -- response: Status 200
+I, [2026-04-08T01:00:21.790307 #1]  INFO -- request: POST http://localhost:8080/pipeline-model-converter/toJson
+I, [2026-04-08T01:00:21.804821 #1]  INFO -- response: Status 200
+D, [2026-04-08T01:00:21.806671 #1] DEBUG -- : [Transformers::Jenkins::JenkinsfilePipeline::DeclarativePipeline::Defaults]: Failed to locate transformer for 'label'
+D, [2026-04-08T01:00:21.806798 #1] DEBUG -- : [Transformers::Jenkins::JenkinsfilePipeline::DeclarativePipeline::RunsOn]: Located transformer for 'label'
+D, [2026-04-08T01:00:21.806879 #1] DEBUG -- : [Transformers::Jenkins::JenkinsfilePipeline::DeclarativePipeline::RunsOn]: Located transformer for 'label'
+D, [2026-04-08T01:00:21.807234 #1] DEBUG -- : [Transformers::Jenkins::JenkinsfilePipeline::DeclarativePipeline::Container]: Failed to locate transformer for 'label'
+D, [2026-04-08T01:00:21.807788 #1] DEBUG -- : [Transformers::Jenkins::JenkinsfilePipeline::DeclarativePipeline::StepTransformer]: Located transformer for 'echo'
+D, [2026-04-08T01:00:21.808043 #1] DEBUG -- : [Transformers::Jenkins::JenkinsfilePipeline::DeclarativePipeline::StepTransformer]: Located custom transformer for 'sleep'
+D, [2026-04-08T01:00:21.808172 #1] DEBUG -- : [Transformers::Jenkins::JenkinsfilePipeline::DeclarativePipeline::StepTransformer]: Located transformer for 'echo'
+D, [2026-04-08T01:00:21.808775 #1] DEBUG -- : [Transformers::Jenkins::JenkinsfilePipeline::DeclarativePipeline::StepTransformer]: Located custom transformer for 'junit'
+D, [2026-04-08T01:00:21.809145 #1] DEBUG -- : [Transformers::Jenkins::DesignerPipeline::On]: Located transformer for 'hudson.triggers.SCMTrigger'
+D, [2026-04-08T01:00:21.809953 #1] DEBUG -- : [Transformers::Jenkins::JenkinsfilePipeline::DeclarativePipeline::Concurrency]: Failed to locate transformer for 'org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty'
+I, [2026-04-08T01:00:21.812547 #1]  INFO -- : Output file(s):
+I, [2026-04-08T01:00:21.824700 #1]  INFO -- :   tmp/dry-run/test_pipeline/.github/workflows/test_pipeline.yml
+I, [2026-04-08T01:00:21.859534 #1]  INFO -- request: GET https://api.github.com/user
+I, [2026-04-08T01:00:21.980771 #1]  INFO -- response: Status 200
+I, [2026-04-08T01:00:21.981796 #1]  INFO -- : Sending telemetry with transaction id '0192c9b4-5bfa-4e8b-893f-bcd1ce341496'

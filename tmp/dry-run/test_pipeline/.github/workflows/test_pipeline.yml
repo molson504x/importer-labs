@@ -1,0 +1,36 @@
+name: test_pipeline
+on:
+  push:
+    paths: "*"
+  schedule:
+  - cron: 0-29/10 * * * *
+env:
+  DISABLE_AUTH: 'true'
+  DB_ENGINE: sqlite
+jobs:
+  build:
+    runs-on:
+      - self-hosted
+      - TeamARunner
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: echo message
+      run: echo "Database engine is ${{ env.DB_ENGINE }}"
+    - name: Sleep for 80
+      run: sleep 80
+      shell: bash
+    - name: echo message
+      run: echo "DISABLE_AUTH is ${{ env.DISABLE_AUTH }}"
+  test:
+    runs-on:
+      - self-hosted
+      - TeamARunner
+    needs: build
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - uses: actions/upload-artifact@v3
+      with:
+        name: junit-artifact
+        path: "**/target/*.xml"
